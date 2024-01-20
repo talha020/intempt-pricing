@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
       experiments: 0.2,
       insight: 0.5,
       predict: 0.2,
-      personalization: 0.2,
       playbookz: 0.2,
       premium: 0.2
     };
@@ -89,7 +88,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         experiments: 0.2,
         insight: 0.5,
         predict: 0.2,
-        personalization: 0.2,
         playbookz: 0.2,
         premium: 0.2
       };
@@ -124,7 +122,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       updateTextContent("#DataIntelligenceCost", "$" + dataIntelligenceCost.toFixed(2));
       updateTextContent("#JourneysCost", "$" + (addonCosts['journeys'] ? addonCosts['journeys'].toFixed(2) : "0.00"));
       updateTextContent("#InsightCost", "$" + (addonCosts['insight'] ? addonCosts['insight'].toFixed(2) : "0.00"));
-      updateTextContent("#personalizationCost", "$" + (addonCosts['personalization'] ? addonCosts['personalization'].toFixed(2) : "0.00"));
+    
       updateTextContent("#ExperimentsCost", "$" + (addonCosts['experiments'] ? addonCosts['experiments'].toFixed(2) : "0.00"));
       updateTextContent("#PredictCost", "$" + (addonCosts['predict'] ? addonCosts['predict'].toFixed(2) : "0.00"));
       updateTextContent("#PremiumCost", "$" + (addonCosts['premium'] ? addonCosts['premium'].toFixed(2) : "0.00"));
@@ -137,7 +135,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       updateTextContent("#ExperimentsCostYearly", "$" + (addonYearlyCosts['experiments'] ? addonYearlyCosts['experiments'].toFixed(2) : "0.00"));
       updateTextContent("#PredictCostYearly", "$" + (addonYearlyCosts['predict'] ? addonYearlyCosts['predict'].toFixed(2) : "0.00"));
       updateTextContent("#PremiumCostYearly", "$" + (addonYearlyCosts['premium'] ? addonYearlyCosts['premium'].toFixed(2) : "0.00"));
-      updateTextContent("#personalizationCostYearly", "$" + (addonYearlyCosts['personalization'] ? addonYearlyCosts['personalization'].toFixed(2) : "0.00"));
+    
       updateTextContent("#GrowthCostYearly", "$" + growthCostYearly.toFixed(2));
       updateTextContent("#PlaybookszCostYearly", "$" + (addonYearlyCosts['playbookz'] ? addonYearlyCosts['playbookz'].toFixed(2) : "0.00"));
       updateTextContent("#TotalCostYearly", "$" + ftotal.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"));
@@ -218,7 +216,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       cost = 0.0268
     }
     return cost
-  } ['journeys', 'experiments', 'predict', 'insight', 'premium', 'personalization', 'playbookz', 'playbook'].forEach(addon => {
+  } ['journeys', 'experiments', 'predict', 'insight', 'premium', 'playbookz', 'playbook'].forEach(addon => {
     document.getElementById(`${addon}Add`).addEventListener('click', function() {
       this.style.display = 'none';
       document.getElementById(`${addon}Remove`).style.display = 'inline';
